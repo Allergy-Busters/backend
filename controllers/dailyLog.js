@@ -1,3 +1,4 @@
+const {Router} = require('express')
 const express = require('express')
 const router = express.Router()
 const DailyLog = require('../models/dailyLogs')
@@ -11,7 +12,7 @@ const DailyLog = require('../models/dailyLogs')
 
 // Create POST 
 
-router.post('/entries', (req,res) => {
+router.post('/', (req,res) => {
     DailyLog.create(req.body, (error, newEntry) => {
         if(error){
             res.status(400).json({error: error.message})
@@ -19,3 +20,6 @@ router.post('/entries', (req,res) => {
         res.status(200).json(newEntry)
     })
 })
+
+
+module.exports = router
