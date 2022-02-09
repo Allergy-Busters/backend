@@ -11,6 +11,6 @@ const dailyLogSchema = new mongoose.Schema({
   location: { type: String },
 });
 
-const dailyLog = mongoose.model("dailyLog", dailyLogSchema);
+const DailyLog = mongoose.model("dailyLog", dailyLogSchema);
 
 module.exports = DailyLog;
