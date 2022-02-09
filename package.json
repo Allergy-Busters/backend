@@ -16,5 +16,8 @@
     "url": "https://github.com/Allergy-Busters/backend/issues"
   },
   "homepage": "https://github.com/Allergy-Busters/backend#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
 }
