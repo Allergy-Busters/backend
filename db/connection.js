@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const mongoURI = "mongodb://localhost:27017/dailyLog";
+const mongoURI = "mongodb://127.0.0.1:27017/entries";
 
 mongoose.connect(mongoURI, {
     useNewUrlParser: true,
