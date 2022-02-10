@@ -16,6 +16,17 @@ router.get('/', (req, res) => {
     })
 })
 
+router.get('/details/:id', (req, res)=> {
+    DailyLog.findById(req.params.id, (error, foundEntry)=>{
+        if(error) {
+            res.status(400).json({error: error.message})
+        }
+        console.log(foundEntry)
+        res.status(200).json(foundEntry)
+    })
+})
+
+
 
 // Create POST 
 
