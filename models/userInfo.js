@@ -6,6 +6,6 @@ const userInfoSchema = new mongoose.Schema({
   familyHistory: { type: String },
 });
 
-const userInfo = mongoose.model("userInfo", userInfoSchema);
+const UserInfo = mongoose.model("userInfo", userInfoSchema);
 
-module.exports = userInfo;
+module.exports = UserInfo;
