@@ -41,7 +41,6 @@ router.post('/', (req,res) => {
 
 //Update/Edit Route
 router.put('/edit/:id', (req, res) => {
-    async () => { const document = await
     DailyLog.findByIdAndUpdate(req.params.id, req.body, {new: true}, (error, updatedEntry) => {
         if(error) {
             res.status(400).json({error: error.message})
@@ -49,7 +48,6 @@ router.put('/edit/:id', (req, res) => {
         console.log(updatedEntry)
         res.status(200).json(updatedEntry)
     })
-}
 })
 
 
