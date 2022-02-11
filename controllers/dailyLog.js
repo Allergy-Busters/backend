@@ -16,6 +16,7 @@ router.get('/', (req, res) => {
     })
 })
 
+//Show Route
 router.get('/details/:id', (req, res)=> {
     DailyLog.findById(req.params.id, (error, foundEntry)=>{
         if(error) {
@@ -27,7 +28,6 @@ router.get('/details/:id', (req, res)=> {
 })
 
 
-
 // Create POST 
 
 router.post('/', (req,res) => {
@@ -37,6 +37,19 @@ router.post('/', (req,res) => {
         }
         res.status(200).json(newEntry)
     })
+})
+
+//Update/Edit Route
+router.put('/edit/:id', (req, res) => {
+    async () => { const document = await
+    DailyLog.findByIdAndUpdate(req.params.id, req.body, {new: true}, (error, updatedEntry) => {
+        if(error) {
+            res.status(400).json({error: error.message})
+        }
+        console.log(updatedEntry)
+        res.status(200).json(updatedEntry)
+    })
+}
 })
 
 
