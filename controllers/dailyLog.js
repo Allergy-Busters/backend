@@ -39,6 +39,22 @@ router.post('/', (req,res) => {
     })
 })
 
+// DELETE
+
+router.delete('/details/:id', (req, res) => {
+    DailyLog.findByIdAndDelete(req.params.id,(error, entry)=>{
+        if (error) {
+            res.status(400).json({ error: error.message })
+          }
+          DailyLog.find({}, (error, remainingEntries) => {
+            
+            res.status(200).json(remainingEntries)
+
+        })
+    })
+}) 
+
+
 //Update/Edit Route
 router.put('/edit/:id', (req, res) => {
     DailyLog.findByIdAndUpdate(req.params.id, req.body, {new: true}, (error, updatedEntry) => {
@@ -49,6 +65,7 @@ router.put('/edit/:id', (req, res) => {
         res.status(200).json(updatedEntry)
     })
 })
+
 
 
 module.exports = router
