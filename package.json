@@ -21,7 +21,10 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.2",
+    "history": "^5.2.0",
     "mongoose": "^6.2.1",
-    "node": "^17.4.0"
+    "node": "^17.4.0",
+    "react-router-dom": "^6.2.1",
+    "use-navigation": "0.0.3"
   }
 }
