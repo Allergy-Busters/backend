@@ -2,8 +2,8 @@ const mongoose = require("../db/connection");
 
 const dailyLogSchema = new mongoose.Schema({
   date: {type: String, required: true},
-  outdoorTemp: { type: String, default: '0 ℉' },
-  visitOutside: { type: Boolean, default: false },
+  outdoorTemp: { type: String},
+  visitOutside: { type: Boolean },
   diet: { type: String },
   exercise: { type: String },
   potentialSymptoms: { type: String },
