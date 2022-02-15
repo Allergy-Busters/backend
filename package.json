@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Allergy-Busters/backend#readme",
   "description": "",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "express": "^4.17.2",
     "history": "^5.2.0",
