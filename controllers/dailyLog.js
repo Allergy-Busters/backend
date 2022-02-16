@@ -2,6 +2,8 @@
 const express = require('express')
 const router = express.Router()
 const DailyLog = require('../models/dailyLogs')
+const multer= require('multer')
+const upload = multer()
 
 
 // Index Route (Main page)
@@ -30,7 +32,7 @@ router.get('/details/:id', (req, res)=> {
 
 // Create POST 
 
-router.post('/', (req,res) => {
+router.post('/', upload.single("img"), (req,res, next) => {
     DailyLog.create(req.body, (error, newEntry) => {
         if(error){
             res.status(400).json({error: error.message})
