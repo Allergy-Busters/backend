@@ -8,7 +8,7 @@ const dailyLogSchema = new mongoose.Schema({
   exercise: { type: String },
   potentialSymptoms: { type: String },
   //^make an array of symptoms?
-  img: { type: String },
+  img: {data: Buffer, contentType: String},
   location: { type: String },
 });
 

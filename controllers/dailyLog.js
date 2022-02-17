@@ -34,6 +34,8 @@ router.get('/details/:id', (req, res)=> {
 
 router.post('/', upload.single("img"), (req,res, next) => {
     DailyLog.create(req.body, (error, newEntry) => {
+        console.log(req.body)
+        console.log(req.file)
         if(error){
             res.status(400).json({error: error.message})
         }
