@@ -9,6 +9,8 @@ const session = require('express-session')
 const bodyParser = require('body-parser')
 const dailyLogController = require('./controllers/dailyLog')
 const sessionController = require('./controllers/session')
+const storage = multer.memoryStorage()
+const upload = multer({ storage: storage })
 
 // const fileStorageEngine = multer.diskStorage({
 //     destination: (req, file, cb) => {
@@ -21,7 +23,7 @@ const sessionController = require('./controllers/session')
 
 // const upload = multer({storage: fileStorageEngine})
 
-const upload = multer()
+// const upload = multer()
 
 // app.post('/single', upload.single('image'), (req,res)=>{
 //     res.send("Single File upload success")
