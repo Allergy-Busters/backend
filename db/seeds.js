@@ -25,6 +25,39 @@ DailyLog.deleteMany({})
             "img": 'picture of hives',
             "location": 'Miami, Florida'
 
+        },
+        {
+            "date": '02/10/2022',
+            "outdoorTemp": '75 ℉',
+            "visitOutside": true,
+            "diet": 'yogurt, chicken',
+            "exercise": '50 squats',
+            "potentialSymptoms": 'rash', 
+            "img": 'picture of rashes',
+            "location": 'Denver, Colorado'
+
+        },
+        {
+            "date": '02/11/2022',
+            "outdoorTemp": '75 ℉',
+            "visitOutside": true,
+            "diet": 'yogurt, granola',
+            "exercise": '5 miile run',
+            "potentialSymptoms": 'feel great', 
+            "img": 'selfie of me smiling',
+            "location": 'Denver, Colorado'
+
+        },
+        {
+            "date": '02/13/2022',
+            "outdoorTemp": '65 ℉',
+            "visitOutside": false,
+            "diet": 'veggie burger, salad',
+            "exercise": '5 miile run',
+            "potentialSymptoms": 'feel great', 
+            "img": 'selfie of me smiling',
+            "location": 'Philadelphia, Pennsylvania'
+
         }
 
     ])
