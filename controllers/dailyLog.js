@@ -64,11 +64,13 @@ router.put('/edit/:id', (req, res) => {
     DailyLog.findByIdAndUpdate(req.params.id, req.body, {new: true}, (error, updatedEntry) => {
         if(error) {
             res.status(400).json({error: error.message})
+            console.log(error)
         }
         console.log(updatedEntry)
         res.status(200).json(updatedEntry)
     })
 })
+
 
 
 
