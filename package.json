@@ -7,7 +7,7 @@
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "Matt Holden, Quentin Burke, Veena Prakash, Ronald Barnett",
+  "author": "Veena Prakash, Matt Holden, Quentin Burke",
   "license": "ISC",
   "repository": {
     "type": "git",
