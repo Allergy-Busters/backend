@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
         if(error) {
             res.status(400).json({error: error.message})
         }
-        console.log(entries)
+        // console.log(entries)
         res.status(200).json(entries)
     })
 })
@@ -24,7 +24,7 @@ router.get('/details/:id', (req, res)=> {
         if(error) {
             res.status(400).json({error: error.message})
         }
-        console.log(foundEntry)
+        // console.log(foundEntry)
         res.status(200).json(foundEntry)
     })
 })
@@ -34,8 +34,8 @@ router.get('/details/:id', (req, res)=> {
 
 router.post('/', upload.single("img"), (req,res, next) => {
     DailyLog.create(req.body, (error, newEntry) => {
-        console.log(req.body)
-        console.log(req.file)
+        // console.log(req.body)
+        // console.log(req.file)
         if(error){
             res.status(400).json({error: error.message})
         }
@@ -64,9 +64,9 @@ router.put('/edit/:id', (req, res) => {
     DailyLog.findByIdAndUpdate(req.params.id, req.body, {new: true}, (error, updatedEntry) => {
         if(error) {
             res.status(400).json({error: error.message})
-            console.log(error)
+            // console.log(error)
         }
-        console.log(updatedEntry)
+        // console.log(updatedEntry)
         res.status(200).json(updatedEntry)
     })
 })

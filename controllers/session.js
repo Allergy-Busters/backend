@@ -13,7 +13,7 @@ router.post('/register', async (req, res, next) => {
             const desiredUsername = req.body.username
             const userExists = await User.findOne({ username: desiredUsername})
             if (userExists){
-                console.log('Username already exists!')
+                // console.log('Username already exists!')
                 res.status(400).json({msg: 'User already exists', status: 400})
             } else {
                 const salt = bcrypt.genSaltSync(10)
@@ -49,7 +49,7 @@ router.post('/login', async (req, res, next) => {
                 res.status(200).json({userToLogin, status: 200})
             } else {
                 res.status(400).json({status: 400, msg: 'Incorrect Username or Password'})
-                console.log('Incorrect username or password')
+                // console.log('Incorrect username or password')
             }
 
         } else {
