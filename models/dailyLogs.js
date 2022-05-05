@@ -10,6 +10,12 @@ const dailyLogSchema = new mongoose.Schema({
   //^make an array of symptoms?
   img: {data: Buffer, contentType: String},
   location: { type: String },
+  owner: {
+    // References use the type ObjectId
+    type: mongoose.Schema.Types.ObjectId,
+    // the name of the model to which they refer
+    ref: 'User'
+  } 
 });
 
 const DailyLog = mongoose.model("DailyLog", dailyLogSchema);

@@ -7,26 +7,33 @@ const upload = multer()
 
 
 // Index Route (Main page)
-router.get('/', (req, res) => {
+router.get('/', (req, res, next) => {
     // console.log("hitting this route")
-    DailyLog.find({}, (error, entries) => {
-        if(error) {
-            res.status(400).json({error: error.message})
-        }
-        // console.log(entries)
-        res.status(200).json(entries)
-    })
+    DailyLog.find({})
+        .populate('owner')
+        .then((dailyLogs) => res.json(dailyLogs))
+        .catch(next)
+        // .exec((error, entries) => {
+        // if(error) {
+        //     res.status(400).json({error: error.message})
+        // }
+        // // console.log(entries)
+        // res.status(200).json(entries)
 })
 
 //Show Route
-router.get('/details/:id', (req, res)=> {
-    DailyLog.findById(req.params.id, (error, foundEntry)=>{
-        if(error) {
-            res.status(400).json({error: error.message})
-        }
-        // console.log(foundEntry)
-        res.status(200).json(foundEntry)
-    })
+router.get('/details/:id', (req, res, next)=> {
+    DailyLog.findById(req.params.id)
+    .populate('owner') 
+    .then((dailyLog) => res.json(dailyLog))
+    .catch(next);
+
+    // (error, foundEntry)=>{
+    //     if(error) {
+    //         res.status(400).json({error: error.message})
+    //     }
+    //     // console.log(foundEntry)
+    //     res.status(200).json(foundEntry)
 })
 
 
