@@ -1,31 +1,37 @@
 const mongoose = require('./connection')
 const DailyLog = require('../models/dailyLogs')
-const User = require('../models/users')
-const dailyLogSeeds = require('../db/seeds.json')
+// const User = require('../models/users')
+const dailyLogSeeds = require('./seeds.json')
 
 DailyLog.deleteMany({})
 .then(() => {
+    return DailyLog.insertMany(dailyLogSeeds)
     // return User.deleteMany({})
 })
-.then (() => {
+.then (data => console.log(data)) 
+.catch(err => console.log(err))
+.finally(() => {
+    process.exit()
+})
+// {
     // return User.create({ 
     //     username: 'owner',
     //     password: 'testPass147',
     //     confirmPassword:'testPass147'
     // })
-    .then( user => {
-        console.log(user)
-        return dailyLogSeeds.map(dailyLog => ({
-            ...dailyLog, owner: user._id
-        }))
-    })
-})
-.then((seeds) => {
-    return DailyLog.insertMany(seeds)
-})
-.then(data => console.log(data))
-.catch(err => console.log(err))
-.finally(() => process.exit)
+//     .then( user => {
+//         console.log(user)
+//         return dailyLogSeeds.map(dailyLog => ({
+//             ...dailyLog, owner: user._id
+//         }))
+//     })
+// })
+// .then((seeds) => {
+//     return DailyLog.insertMany(seeds)
+// })
+// .then(data => console.log(data))
+// .catch(err => console.log(err))
+// .finally(() => process.exit)
 
 
 // const mongoose = require('./connection')
